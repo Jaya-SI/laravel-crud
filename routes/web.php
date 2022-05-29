@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get('/siswa',[SiswaController::class, 'index']);
 Route::post('/siswa/create', [SiswaController::class, 'create']);
+Route::get('/siswa/{id}/edit', [SiswaController::class, 'edit']);
+Route::post('/siswa/{id}/update', [SiswaController::class, 'update']);

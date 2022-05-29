@@ -10,7 +10,10 @@
     <div class="container mt-3">
         @if (session('sukses'))
         <div class="alert alert-success" role="alert">
-            {{ session('sukses') }}
+            <div class="row">
+                <div class="col-6">{{ session('sukses') }}</div>
+                <div class="col-6"><button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></div>
+            </div>
         </div>
         @endif
         <div class="row">
@@ -25,10 +28,10 @@
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Input Data Siswa</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -75,6 +78,7 @@
                 <th>Jenis Kelamin</th>
                 <th>Agama</th>
                 <th>Alamat</th>
+                <th>Aksi</th>
             </tr>
             @foreach ($data_siswa as $siswa)
             <tr>
@@ -83,6 +87,7 @@
                 <td>{{ $siswa->jenis_kelamin }}</td>
                 <td>{{ $siswa->agama }}</td>
                 <td>{{ $siswa->alamat }}</td>
+                <td><a href="/siswa/{{ $siswa->id }}/edit" class="btn btn-warning btn-sm">Edit</a></td>
             </tr>
             @endforeach
         </table>
